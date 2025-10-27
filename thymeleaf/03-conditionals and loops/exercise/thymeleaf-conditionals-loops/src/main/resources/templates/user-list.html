@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User List</title>
+</head>
+<body>
+<!--Loop Example-->
+<ul>
+    <li th:each="user :${users}" th:text="${user}"></li>
+</ul>
+
+<!--Conditional Example-->
+<p th:if="${isAdmin}">You have admin privileges.</p>
+<p th:unless="${isAdmin}">You are regular user</p>
+
+<!--Switch Example-->
+<div th:switch="${role}">
+    <p th:case="'ADMIN'">Welcome, Administrator!</p>
+    <p th:case="'USER'">Welcome, User!</p>
+    <p th:case="*">Welcome, Guest!</p>
+</div>
+</body>
+</html>
