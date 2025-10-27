@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Syntax</title>
+</head>
+<body>
+<h1 th:text="'Hello, '+ ${name} + '!'">Hello, User!</h1>
+
+<p th:if="${isActive}">Status: Active</p>
+<p th:unless="${isActive}">Status: Inactive</p>
+
+<ul>
+    <li th:each="item : ${items}" th:text="${item}">item</li>
+</ul>
+
+<a th:href="@{/}">Go to Home</a>
+
+<p th:if="${isAdmin}">Welcome, Admin!</p>
+</body>
+</html>
